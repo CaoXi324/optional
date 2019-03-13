@@ -33,20 +33,20 @@ public class OptionalDemo {
 //        System.out.println(empty.orElse("a"));//a
         String nullName = null;
         String name2 = Optional.ofNullable(nullName).orElseGet(() -> b());//用Optional.of()会报错
-        String name3 = empty.orElse( b());
+        String name3 = empty.orElse( "1");
         String name4 = optA.orElse(a());
-//        String name5 = optB.orElseGet(()->b());
+        String name5 = optB.orElseGet(()->b());
         Optional name6 = Optional.ofNullable(optB).orElseGet(()-> Optional.ofNullable(b()));
-//        System.out.println(name2);//
-//        System.out.println(name3);
-//        System.out.println(name4);
-//        System.out.println(name5);
+        System.out.println(name2);//
+        System.out.println(name3);
+        System.out.println(name4);
+        System.out.println(name5);
 
 //        orElseThrow() 方法表示当Optional里面的值为空的时候，抛出一个异常
-//        String name3 = Optional.ofNullable(nullName).orElseThrow(IllegalArgumentException::new);
+        String name7 = Optional.ofNullable(nullName).orElseThrow(IllegalArgumentException::new);
 
 //        get()方法表示当Optional的对象不为空的时候，返回Optional对象里面的内容。
-//        System.out.println(optB.get());//female
+        System.out.println(optB.get());//female
 
     }
 }
