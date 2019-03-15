@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Optional;
 
 public class OptionalDemo {
@@ -20,17 +21,20 @@ public class OptionalDemo {
         Optional<String> optB = Optional.ofNullable(gender);
 
 
+
+
+
 //      判断是否为空
-//        System.out.println(optA.isPresent());//true
-////        System.out.println(optB.isEmpty());
-//        System.out.println(empty.isPresent());//false
-//
-////        ifPresent() 方法里面接受一个lambda表达式，表示当对象存在时需要执行的操作。
-//        optA.ifPresent(value -> System.out.println(value));//Alex
-//
-//
-//        System.out.println(optA.orElse("a"));//Alex
-//        System.out.println(empty.orElse("a"));//a
+        System.out.println(optA.isPresent());//true
+        System.out.println();
+        System.out.println(empty.isPresent());//false
+
+//        ifPresent() 方法里面接受一个lambda表达式，表示当对象存在时需要执行的操作。
+        optA.ifPresent(value -> System.out.println(value));//Alex
+
+
+        System.out.println(optA.orElse("a"));//Alex
+        System.out.println(empty.orElse("a"));//a
         String nullName = null;
         String name2 = Optional.ofNullable(nullName).orElseGet(() -> b());//用Optional.of()会报错
         String name3 = empty.orElse( "1");
